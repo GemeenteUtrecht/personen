@@ -24,7 +24,7 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  * @version    	1.0
  *
  * @link   		http//:www.conduction.nl
- * @package		Common Ground
+ * @package		Commen Ground
  * @subpackage  BRP
  * 
  *  @ApiResource( 
@@ -113,7 +113,7 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *            	},
  *             	"responses" = {
  *         			"202" = {
- *         				"description" = "Teruggedraaid naar eerdere versie"
+ *         				"description" = "Terug gedraaid naar eerdere versie"
  *         			},	
  *         			"400" = {
  *         				"description" = "Ongeldige aanvraag"
@@ -137,7 +137,7 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
 class Persoon implements StringableInterface
 {
 	/**
-	 * Het identificatie nummer van deze Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>
+	 * Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>
 	 * 
 	 * @var int|null
 	 *
@@ -178,7 +178,7 @@ class Persoon implements StringableInterface
 	public $identificatie;
 	
 	/**
-	 * Het huwelijk waartoe deze partner behoort
+	 * Het Huwelijk waartoe deze partner behoord
 	 *
 	 * @var \App\Entity\Organisatie
 	 * @ORM\ManyToOne(targetEntity="\App\Entity\Organisatie", cascade={"persist", "remove"}, inversedBy="personen")
@@ -188,7 +188,7 @@ class Persoon implements StringableInterface
 	public $bronOrganisatie;
 	
 	/**
-	 * De naam van deze persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>
+	 * De naam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>
 	 *
 	 * @var string
 	 * 
@@ -200,7 +200,7 @@ class Persoon implements StringableInterface
 	 * @Assert\Length(
 	 *      min = 2,
 	 *      max = 255,
-	 *      minMessage = "De voornaam moet tenminste {{ limit }} karakters lang zijn",
+	 *      minMessage = "De voornaam moet ten minste {{ limit }} karakters lang zijn",
 	 *      maxMessage = "De voornaam kan niet langer dan {{ limit }} karakters zijn"
 	 * )
 	 * @Groups({"read", "write"})
@@ -232,7 +232,7 @@ class Persoon implements StringableInterface
 	 * @Assert\Length(
 	 *      min = 2,
 	 *      max = 255,
-	 *      minMessage = "Het voorvoegsel moet tenminste {{ limit }} karakters lang zijn",
+	 *      minMessage = "Het voorvoegsel moet ten minste {{ limit }} karakters lang zijn",
 	 *      maxMessage = "Het voorvoegsel kan niet langer dan {{ limit }} karakters zijn"
 	 * )
 	 * @Groups({"read", "write"})
@@ -252,7 +252,7 @@ class Persoon implements StringableInterface
 	public $voorvoegselGeslachtsnaam;
 	
 	/**
-	 * De achternaam van deze persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>
+	 * De achternaam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>
 	 *
 	 * @var string
 	 *
@@ -264,7 +264,7 @@ class Persoon implements StringableInterface
 	 * @Assert\Length(
 	 *      min = 2,
 	 *      max = 255,
-	 *      minMessage = "De geslachtsnaam moet tenminste {{ limit }} karakters lang zijn",
+	 *      minMessage = "De geslachtsnaam moet ten minste {{ limit }} karakters lang zijn",
 	 *      maxMessage = "De geslachtsnaam kan niet langer dan {{ limit }} karakters zijn"
 	 * )
 	 * @Groups({"read", "write"})
@@ -284,7 +284,7 @@ class Persoon implements StringableInterface
 	public $geslachtsnaam;	
 	
 	/**
-	 * Het emailadres van deze persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>
+	 * Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>
 	 *
 	 * @var string
 	 *
@@ -294,14 +294,14 @@ class Persoon implements StringableInterface
 	 *     nullable = true,
 	 * )
 	 * @Assert\Email(
-     *     message = "Het emailadres '{{ value }}' is geen geldig emailadres.",
+     *     message = "Het email addres '{{ value }}' is geen geldig email addres.",
      *     checkMX = true
      * )
 	 * @Assert\Length(
 	 *      min = 8,
 	 *      max = 255,
-	 *      minMessage = "Het emailadres moet minimaal  {{ limit }} tekens lang zijn",
-	 *      maxMessage = "Het emailadres mag maximaal {{ limit }} tekens lang zijn"
+	 *      minMessage = "Het email addres moet minimaal  {{ limit }} tekens lang zijn",
+	 *      maxMessage = "Het email addresm mag maximaal {{ limit }} tekens lang zijn"
 	 * )
 	 * @Groups({"read", "write"})
 	 * @ApiProperty(
@@ -320,7 +320,7 @@ class Persoon implements StringableInterface
 	public $emailadres;
 	
 	/**
-	 * Het telefoonnummer van deze persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>
+	 * Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>
 	 *
 	 * @var string
 	 *
@@ -362,7 +362,7 @@ class Persoon implements StringableInterface
 	 *             "required"="true",
 	 *             "maxLength"=255,
 	 *             "format"="uri",
-	 *             "description"="URL-referentie naar de agenda van deze persoon"
+	 *             "description"="URL-referentie naar de agenda van deze dit persoon"
 	 *         }
 	 *     }
 	 * )
@@ -371,7 +371,7 @@ class Persoon implements StringableInterface
 	public $agenda;
 	
 	/**
-	 * Het tijdstip waarop dit object is aangemaakt.
+	 * Het tijdstip waarop dit object is aangemaakt
 	 *
 	 * @var string Een "Y-m-d H:i:s" waarde bijvoorbeeld "2018-12-31 13:33:05" ofwel "Jaar-dag-maand uur:minuut:seconde"
 	 * @Gedmo\Timestampable(on="create")
@@ -384,7 +384,7 @@ class Persoon implements StringableInterface
 	public $registratiedatum;
 	
 	/**
-	 * Het tijdstip waarop dit object voor het laatst is gewijzigd.
+	 * Het tijdstip waarop dit object voor het laats is gewijzigd
 	 *
 	 * @var string Een "Y-m-d H:i:s" waarde bijvoorbeeld "2018-12-31 13:33:05" ofwel "Jaar-dag-maand uur:minuut:seconde"
 	 * @Gedmo\Timestampable(on="update")
@@ -411,7 +411,7 @@ class Persoon implements StringableInterface
 	 * @Assert\Length(
 	 *      min = 2,
 	 *      max = 17,
-	 *      minMessage = "De taal moet tenminste {{ limit }} karakters lang zijn",
+	 *      minMessage = "De taal moet ten minste {{ limit }} karakters lang zijn",
 	 *      maxMessage = "De taal kan niet langer dan {{ limit }} karakters zijn"
 	 * )
 	 * @ApiProperty(
@@ -440,7 +440,7 @@ class Persoon implements StringableInterface
 	}
 	
 	/**
-	 * Vanuit rendering perspectief (voor bijvoorbeeld logging of berichten) is het belangrijk dat we een entiteit altijd naar string kunnen omzetten.
+	 * Vanuit rendering perspectief (voor bijvoorbeeld loging of berichten) is het belangrijk dat we een entiteit altijd naar string kunnen omzetten
 	 */
 	public function __toString()
 	{
