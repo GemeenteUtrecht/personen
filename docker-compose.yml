@@ -28,7 +28,7 @@ services:
       - "3306:3306"
       
   # The PHP container
-  brp_component:
+  brp-component:
     image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-component:latest
     build:
       context: ./ 
@@ -42,8 +42,8 @@ services:
       - ./:/srv/api:rw,cached
       
   # The NGINX container
-  brp_api:
-    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-nginx:latest
+  brp-api:
+    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-nginx:V.0.0.1
     build: 
       context: ./ 
       dockerfile: docker/nginx/Dockerfile
@@ -51,7 +51,7 @@ services:
         - ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}_php
         - ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}_api  
     depends_on:
-      - brp_component
+      - brp-component
     volumes:
       - ./public:/srv/api/public:ro
     ports:
