@@ -40,10 +40,10 @@ info:
     
     # Scopes
     Applicaties kunnen op deze API alleen wijzigingen uitvoeren waarvoor zij over de juiste rechten(scopes) beschikken. De op deze api verschikbare scopes zijn:
-    - Persoon:schrijven
-    - Persoon:lezen
-    - Persoon:maken
-    - Persoon:verwijderen
+    - Personen:schrijven
+    - Personen:lezen
+    - Personen:maken
+    - Personen:verwijderen
     - applicatie:schrijven
     - applicatie:lezen
     - applicatie:maken
@@ -1266,7 +1266,7 @@ externalDocs:
   url: 'https://github.com/ConductionNL/zaakonline'
 tags:
   -
-    name: Persoon
+    name: Personen
     description: 'Dit object beschrijft een natuurlijk persoon'
   -
     name: Applicatie
@@ -1275,7 +1275,7 @@ x-tagGroups:
   -
     name: BRP
     tags:
-      - Persoon
+      - Personen
   -
     name: Applicatie
     tags:
