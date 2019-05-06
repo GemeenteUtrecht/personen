@@ -39,8 +39,8 @@ use App\Controller\UserController;
  *  		"denormalizationContext"={"groups"={"applicatie:schrijven"}},
  *      	"path"="/applicaties",
  *  		"openapi_context" = {
- * 				"summary" = "Collectie",
- *         		"description" = "Haal een verzameling van Applicaties op, het is mogelijk om deze resultaten te filteren aan de hand van query parameters. <br><br>Lees meer over het filteren van resulaten onder [filteren](/#section/Filteren)."
+ * 				"summary" = "Verzameling",
+ *         		"description" = "Haal een verzameling van Applicaties op, het is mogelijk om deze resultaten te filteren aan de hand van query parameters. <br><br>Lees meer over het filteren van resulaten onder [filteren](/#section/Filteren)."            
  *  		}
  *  	},
  *     "register"={
@@ -52,7 +52,22 @@ use App\Controller\UserController;
  *
  *         "openapi_context" = {
  *         		"summary" = "Registreren",
- *         		"description" = "Registreer een nieuwe Applicatie voor dit component"
+ *         		"description" = "Registreer een nieuwe Applicatie voor dit component",
+ *          	"consumes" = {
+ *              	"application/json",
+ *               	"text/html",
+ *            	},
+ *             	"produces" = {
+ *         			"application/json"
+ *            	},
+ *             	"responses" = {
+ *         			"201" = {
+ *         				"description" = "Applicatie aangemaakt"
+ *         			},
+ *         			"400" = {
+ *         				"description" = "Ongeldige aanvraag"
+ *         			}
+ *            	}
  *         }
  *     },
  *     "login"={
@@ -63,7 +78,22 @@ use App\Controller\UserController;
  *     	   "denormalization_context"={"groups"={"applicatie:inloggen"}}, 
  *         "openapi_context" = {
  *         		"summary" = "Token halen",
- *         		"description" = "Inloggen als Applicatie en JWT Token ophalen"
+ *         		"description" = "Inloggen als Applicatie en JWT Token ophalen",
+ *          	"consumes" = {
+ *              	"application/json",
+ *               	"text/html",
+ *            	},
+ *             	"produces" = {
+ *         			"application/json"
+ *            	},
+ *             	"responses" = {
+ *         			"200" = {
+ *         				"description" = "Applicatie succesvol ingelogd"
+ *         			},
+ *         			"401" = {
+ *         				"description" = "Applicatie niet ingelogd"
+ *         			}
+ *            	}
  *         }
  *     },
  *  },
@@ -74,7 +104,7 @@ use App\Controller\UserController;
  *      	"path"="/applicatie/{id}",
  *  		"openapi_context" = {
  * 				"summary" = "Haal op",
- *         		"description" = "Haalt een Applicatie op"
+ *         		"description" = "Haal een Applicatie op"           
  *  		}
  *  	},
  *     "put"={
@@ -83,7 +113,18 @@ use App\Controller\UserController;
  *      	"path"="/applicatie/{id}",
  *  		"openapi_context" = {
  * 				"summary" = "Werk bij",
- *         		"description" = "Werk een Applicatie bij"
+ *         		"description" = "Werk een Applicatie bij.",
+ *             	"responses" = {
+ *         			"202" = {
+ *         				"description" = "applicatie bijgewerkt"
+ *         			},	
+ *         			"400" = {
+ *         				"description" = "Ongeldige aanvraag"
+ *         			},
+ *         			"404" = {
+ *         				"description" = "Applicatie niet gevonden"
+ *         			}
+ *            	}            
  *  		}
  *  	},
  *     "log"={
@@ -94,7 +135,11 @@ use App\Controller\UserController;
  *     		"denormalization_context"={"groups"={"applicatie:schrijven"}},
  *         	"openapi_context" = {
  *         		"summary" = "Logboek",
- *         		"description" = "Bekijk de wijzigingen op dit Applicatie object"
+ *         		"description" = "Bekijk de wijzigingen op dit Applicatie object.",
+ *          	"consumes" = {
+ *              	"application/json",
+ *               	"text/html",
+ *            	}
  *         }
  *     }
  *  }
@@ -158,7 +203,7 @@ class Applicatie implements UserInterface, StringableInterface
 	public $naam;
 		
 	/**
-	 * Een door de organisatie opgegeven sleutel waarmee deze Applicatie zich identificeerd bij het ophalen van en JWT token.
+	 * Een door de organisatie opgegeven sleutel waarmee deze Applicatie zich identificeert bij het ophalen van en JWT token.
 	 * 
 	 * @Groups({"applicatie:schrijven","applicatie:maken","applicatie:inloggen"})
 	 * @ORM\Column(type="string", length=500)
@@ -199,7 +244,7 @@ class Applicatie implements UserInterface, StringableInterface
 	public $scopes;
 	
 	/**
-	 * Het RSIN van de organisatie waartoe deze Applicatie behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef.
+	 * Het RSIN van de organisatie waartoe deze Applicatie behoort. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef.
 	 *
 	 * @var integer
 	 * @ORM\Column(
@@ -231,7 +276,7 @@ class Applicatie implements UserInterface, StringableInterface
 	public $organisatie;	
 	
 	/**
-	 * Word gebruikt om aan te geven of deze aplicatie actief is (en mag inloggen) of dat deze slechts wordt gebruikt voor archief doeleinden
+	 * Word gebruikt om aan te geven of deze applicatie actief is (en mag inloggen) of dat deze slechts wordt gebruikt voor archief doeleinden
 	 * 
 	 * @Groups({"applicatie:lezen","applicatie:schrijven"})
      * @ApiFilter(BooleanFilter::class)
@@ -272,7 +317,7 @@ class Applicatie implements UserInterface, StringableInterface
 	public $wijzigingsdatum;
 	
 	/**
-	 * De contactpersoon voor deze Applicatie, die bijvoorbeeld word verwittigd bij misbruik.
+	 * De contactpersoon voor deze Applicatie, die bijvoorbeeld wordt verwittigd bij misbruik.
 	 *
 	 * @ORM\Column(
 	 *     type     = "string",
@@ -306,7 +351,7 @@ class Applicatie implements UserInterface, StringableInterface
 	 */
 	
 	/**
-	 * Username wordt door symfony gebruikt voor de gebruikersnaam maar in de context commonground component api gebruken we hem niet en onderdruken we hem door hem aan geen groupen toe te wijzen
+	 * Username wordt door symfony gebruikt voor de gebruikersnaam maar in de context common ground component api gebruiken we hem niet en onderdrukken we hem door hem aan geen groepen toe te wijzen
 	 *
 	 * @Groups({"none"})
 	 */
