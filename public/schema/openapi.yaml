@@ -364,10 +364,11 @@ paths:
         description: 'The new Applicatie resource'
   /personen:
     get:
+      summary: 'Logboek inzien'
+      description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
         - wijziging
       operationId: getWijzigingCollection
-      summary: 'Retrieves the collection of wijziging resources.'
       responses:
         200:
           description: 'wijziging collection response'
@@ -411,10 +412,11 @@ paths:
           schema:
             type: string
     post:
+      summary: 'Logboek inzien'
+      description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
         - wijziging
       operationId: postWijzigingCollection
-      summary: 'Creates a wijziging resource.'
       responses:
         201:
           description: 'wijziging resource created'
@@ -452,10 +454,11 @@ paths:
         description: 'The new wijziging resource'
   '/personen/{id}':
     get:
+      summary: 'Logboek inzien'
+      description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
         - wijziging
       operationId: getWijzigingItem
-      summary: 'Retrieves a wijziging resource.'
       parameters:
         -
           name: id
@@ -479,10 +482,11 @@ paths:
         404:
           description: 'Resource not found'
     put:
+      summary: 'Logboek inzien'
+      description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
         - wijziging
       operationId: putWijzigingItem
-      summary: 'Replaces the wijziging resource.'
       parameters:
         -
           name: id
@@ -520,10 +524,11 @@ paths:
               $ref: '#/components/schemas/wijziging'
         description: 'The updated wijziging resource'
     delete:
+      summary: 'Logboek inzien'
+      description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
         - wijziging
       operationId: deleteWijzigingItem
-      summary: 'Removes the wijziging resource.'
       responses:
         204:
           description: 'wijziging resource deleted'

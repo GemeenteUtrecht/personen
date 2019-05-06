@@ -34,10 +34,12 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  @ApiResource( 
  *  collectionOperations={
  *  	"get"={
- *  		"normalizationContext"={"groups"={"read"}},
- *  		"denormalizationContext"={"groups"={"write"}},
+ *  		"normalizationContext"={"groups"={"persoon:lezen"}},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
  *      	"path"="/personen",
  *  		"openapi_context" = {
+ *         		"summary" = "Verzameling",
+ *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
  *  		}
  *  	},
  *  	"post"={
@@ -45,6 +47,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		"personen"={"groups"={"write"}},
  *      	"path"="/personen",
  *  		"openapi_context" = {
+ *         		"summary" = "Logboek inzien",
+ *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
  *  		}
  *  	}
  *  },
@@ -54,6 +58,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		"denormalizationContext"={"groups"={"write"}},
  *      	"path"="/personen/{id}",
  *  		"openapi_context" = {
+ *         		"summary" = "Logboek inzien",
+ *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
  *  		}
  *  	},
  *     "put"={
@@ -61,6 +67,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		"denormalizationContext"={"groups"={"write"}},
  *      	"path"="/personen/{id}",
  *  		"openapi_context" = {
+ *         		"summary" = "Logboek inzien",
+ *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
  *  		}
  *  	},
  *     "delete"={
@@ -68,6 +76,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		"denormalizationContext"={"groups"={"write"}},
  *      	"path"="/personen/{id}",
  *  		"openapi_context" = {
+ *         		"summary" = "Logboek inzien",
+ *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
  *  		}
  *  	},
  *     "log"={
@@ -131,6 +141,7 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  }
  * )
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  * @Gedmo\Loggable(logEntryClass="ActivityLogBundle\Entity\LogEntry")
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity(
