@@ -32,7 +32,7 @@ use App\Controller\UserController;
  * @link   		http//:www.conduction.nl
  * @package		Commen Ground
  *
- *  @ApiResource(
+ * @ApiResource(
  *  collectionOperations={
  *  	"get"={
  *  		"normalizationContext"={"groups"={"applicatie:lezen"}},
@@ -101,7 +101,6 @@ use App\Controller\UserController;
  * )
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity
  * @Gedmo\Loggable(logEntryClass="ActivityLogBundle\Entity\LogEntry")
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity(

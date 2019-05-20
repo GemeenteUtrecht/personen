@@ -84,6 +84,14 @@ parameters:
               # The general endpoints  
             - name: Persoon
               description: "Dit object beschrijft een natuurlijk persoon."
+            - name: Adres
+              description: "Dit object beschrijft adres gegevens van een natuurlijk persoon."
+            - name: Naam
+              description: "Dit object beschrijft naam gegevens van een natuurlijk persoon."
+            - name: Overlijden
+              description: "Dit object beschrijft het overlijde van een natuurlijk persoon."
+            - name: Geboorte
+              description: "Dit object beschrijft de geboorte van een natuurlijk persoon."
             - name: Applicatie
               description: "Applicatie gebonden aan een JWT token behorende tot een organisatie."
               # Grouping the endopoint  
@@ -91,6 +99,10 @@ parameters:
             - name: BRP
               tags:
               - Persoon
+              - Adres
+              - Naam
+              - Overlijden
+              - Geboorte
             - name: Applicatie
               tags:
               - Applicatie

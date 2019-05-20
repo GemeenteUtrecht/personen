@@ -622,6 +622,123 @@ paths:
             schema:
               $ref: '#/components/schemas/Wijziging-write'
         description: 'The new Wijziging resource'
+  '/persoon/{id}':
+    get:
+      summary: 'Haal op'
+      description: 'Haal een persoon op.'
+      tags:
+        - Persoon
+      operationId: getPersoonItem
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Persoon resource response'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Persoon'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persoon'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Persoon'
+        404:
+          description: 'Resource not found'
+    put:
+      summary: 'Werk bij'
+      description: 'Werk een persoon bij.'
+      tags:
+        - Persoon
+      operationId: putPersoonItem
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Persoon resource updated'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Persoon'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persoon'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Persoon'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Persoon'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Persoon'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Persoon'
+        description: 'The updated Persoon resource'
+    delete:
+      summary: 'Verwijder een specifiek persoon'
+      tags:
+        - Persoon
+      operationId: deletePersoonItem
+      responses:
+        204:
+          description: 'Persoon resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+  '/persoon/{id}/log':
+    get:
+      summary: Logboek
+      description: 'Bekijk de wijzigingen op dit persoon object.'
+      tags:
+        - Persoon
+      operationId: logPersoonItem
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Persoon resource response'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Persoon-persoon:lezen'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persoon-persoon:lezen'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Persoon-persoon:lezen'
+        404:
+          description: 'Resource not found'
   /registreer:
     post:
       summary: Registreren
@@ -821,7 +938,6 @@ components:
       description: Persoon
       properties:
         id:
-          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
           type: integer
         identificatie:
           type: string
@@ -933,12 +1049,11 @@ components:
           type: string
         naam:
           type: string
-    Persoon-read:
+    'Persoon-persoon:lezen':
       type: object
       description: Persoon
       properties:
         id:
-          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
           type: integer
         identificatie:
           type: string
@@ -988,6 +1103,36 @@ components:
           minLength: 10
           example: +31(0)6-12345678
           description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        ouders:
+          type: string
+          example: '[]'
+          description: 'Verwijzing naar de BRP inschrijving van ouders'
+          items:
+            type: string
+        partners:
+          type: string
+          example: '[]'
+          description: 'Verwijzing naar de BRP inschrijving van partners'
+          items:
+            type: string
+        kinderen:
+          type: string
+          example: '[]'
+          description: 'Verwijzing naar de BRP inschrijving van kinderen'
+          items:
+            type: string
+        aanschrijving:
+          type: string
+        naam:
+          type: string
+        verblijfadres:
+          type: string
+        postadres:
+          type: string
+        geboorte:
+          type: string
+        overlijden:
+          type: string
         agenda:
           type: url
           example: 'https://ref.tst.vng.cloud/zrc/api/v1/zaken/24524f1c-1c14-4801-9535-22007b8d1b65'
@@ -1020,74 +1165,6 @@ components:
         eigenaar:
           description: 'Met eigenaar wordt bijgehouden welke  applicatie verantwoordelijk is voor het object, en daarvoor de rechten beheerd en uitgeeft. In die zin moet de eigenaar dan ook worden gezien in de trant van autorisatie en configuratie in plaats van als onderdeel van het datamodel.'
           type: string
-    Persoon-write:
-      type: object
-      description: Persoon
-      properties:
-        id:
-          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
-          type: integer
-        identificatie:
-          type: string
-          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
-          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
-          maxLength: 40
-        burgerservicenummer:
-          type: string
-          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
-          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
-          maxLength: 40
-        emailadres:
-          type: email
-          maxLength: 255
-          minLength: 8
-          example: john@do.nl
-          description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
-        telefoonnummer:
-          type: string
-          maxLength: 255
-          minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
-        faxNummer:
-          type: string
-          maxLength: 255
-          minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
-        websiteUrl:
-          type: string
-          maxLength: 255
-          minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
-        aandudingNaamsgebruik:
-          type: string
-          maxLength: 255
-          minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
-        agenda:
-          type: url
-          example: 'https://ref.tst.vng.cloud/zrc/api/v1/zaken/24524f1c-1c14-4801-9535-22007b8d1b65'
-          required: 'true'
-          maxLength: 255
-          format: uri
-          description: 'URL-referentie naar de agenda van dit persoon'
-        taal:
-          type: string
-          maxLength: 17
-          minLength: 2
-          example: NL
-          description: 'De taal waarin de informatie van  dit object is opgesteld <br /><b>Schema:</b> <a href="https://www.ietf.org/rfc/rfc3066.txt">https://www.ietf.org/rfc/rfc3066.txt</a>'
-        contactPersoon:
-          title: Contactpersoon
-          type: url
-          example: 'https://ref.tst.vng.cloud/zrc/api/v1/zaken/24524f1c-1c14-4801-9535-22007b8d1b65'
-          required: 'true'
-          maxLength: 255
-          format: uri
-          description: 'Het contact persoon voor deze Persoon'
     Wijziging:
       type: object
       description: Wijziging
@@ -1313,6 +1390,18 @@ tags:
     name: Persoon
     description: 'Dit object beschrijft een natuurlijk persoon.'
   -
+    name: Adres
+    description: 'Dit object beschrijft adres gegevens van een natuurlijk persoon.'
+  -
+    name: Naam
+    description: 'Dit object beschrijft naam gegevens van een natuurlijk persoon.'
+  -
+    name: Overlijden
+    description: 'Dit object beschrijft het overlijde van een natuurlijk persoon.'
+  -
+    name: Geboorte
+    description: 'Dit object beschrijft de geboorte van een natuurlijk persoon.'
+  -
     name: Applicatie
     description: 'Applicatie gebonden aan een JWT token behorende tot een organisatie.'
 x-tagGroups:
@@ -1320,6 +1409,10 @@ x-tagGroups:
     name: BRP
     tags:
       - Persoon
+      - Adres
+      - Naam
+      - Overlijden
+      - Geboorte
   -
     name: Applicatie
     tags:

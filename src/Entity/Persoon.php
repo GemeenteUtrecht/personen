@@ -23,8 +23,6 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
 /**
  * Persoon
  * 
- * Beschrijving
- * 
  * @category   	Entity
  *
  * @author     	Ruben van der Linde <ruben@conduction.nl>
@@ -35,111 +33,63 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  * @package		Commen Ground
  * @subpackage  BRP
  * 
- *  @ApiResource( 
+ * @ApiResource(
  *  collectionOperations={
  *  	"get"={
  *  		"normalizationContext"={"groups"={"persoon:lezen"}},
  *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
  *      	"path"="/personen",
  *  		"openapi_context" = {
- *         		"summary" = "Verzameling",
- *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
+ * 				"summary" = "Verzameling",
+ *         		"description" = "Haal een verzameling van Applicaties op, het is mogelijk om deze resultaten te filteren aan de hand van query parameters. <br><br>Lees meer over het filteren van resultaten onder [filteren](/#section/Filteren)."            
  *  		}
  *  	},
- *  	"post"={
- *  		"normalizationContext"={"groups"={"read"}},
- *  		"personen"={"groups"={"write"}},
+ *     "post"={
+ *  		"normalizationContext"={"groups"={"persoon:lezen"}},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
  *      	"path"="/personen",
  *  		"openapi_context" = {
- *         		"summary" = "Logboek inzien",
- *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
+ * 				"summary" = "Maak aan",
+ *         		"description" = "Maak een persoon aan."
  *  		}
  *  	}
  *  },
  * 	itemOperations={
  *     "get"={
- *  		"normalizationContext"={"groups"={"read"}},
- *  		"denormalizationContext"={"groups"={"write"}},
- *      	"path"="/personen/{id}",
+ *  		"normalizationContext"={"groups"={"persoon:lezen"}},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
+ *      	"path"="/persoon/{id}",
  *  		"openapi_context" = {
- *         		"summary" = "Logboek inzien",
- *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
+ * 				"summary" = "Haal op",
+ *         		"description" = "Haal een persoon op."           
  *  		}
  *  	},
  *     "put"={
- *  		"normalizationContext"={"groups"={"read"}},
- *  		"denormalizationContext"={"groups"={"write"}},
- *      	"path"="/personen/{id}",
+ *  		"normalizationContext"={"groups"={"persoon:lezen"}},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
+ *      	"path"="/persoon/{id}",
  *  		"openapi_context" = {
- *         		"summary" = "Logboek inzien",
- *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
+ * 				"summary" = "Werk bij",
+ *         		"description" = "Werk een persoon bij."
  *  		}
  *  	},
  *     "delete"={
- *  		"normalizationContext"={"groups"={"read"}},
- *  		"denormalizationContext"={"groups"={"write"}},
- *      	"path"="/personen/{id}",
+ *  		"normalizationContext"={"groups"={"persoon:lezen"}},
+ *  		"denormalizationContext"={"groups"={"persoon:verwijderen"}},
+ *      	"path"="/persoon/{id}",
  *  		"openapi_context" = {
- *         		"summary" = "Logboek inzien",
- *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
+ * 				"summary" = "Verwijder een specifiek persoon"
  *  		}
  *  	},
  *     "log"={
  *         	"method"="GET",
- *         	"path"="/personen/{id}/log",
- *          "controller"= HuwelijkController::class,
- *     		"normalization_context"={"groups"={"read"}},
- *     		"denormalization_context"={"groups"={"write"}},
+ *         	"path"="/persoon/{id}/log",
+ *          "controller"= UserController::class,
+ *     		"normalization_context"={"groups"={"persoon:lezen"}},
+ *     		"denormalization_context"={"groups"={"persoon:schrijven"}},
  *         	"openapi_context" = {
- *         		"summary" = "Logboek inzien",
- *         		"description" = "Geeft een array van eerdere versies en wijzigingen van dit object",
- *          	"consumes" = {
- *              	"application/json",
- *               	"text/html",
- *            	},
- *             	"produces" = {
- *         			"application/json"
- *            	},
- *             	"responses" = {
- *         			"200" = {
- *         				"description" = "Een overzicht van versies"
- *         			},	
- *         			"400" = {
- *         				"description" = "Ongeldige aanvraag"
- *         			},
- *         			"404" = {
- *         				"description" = "Huwelijk of aanvraag niet gevonden"
- *         			}
- *            	}            
- *         }
- *     },
- *     "revert"={
- *         	"method"="POST",
- *         	"path"="/personen/{id}/revert/{version}",
- *          "controller"= HuwelijkController::class,
- *     		"normalization_context"={"groups"={"read"}},
- *     		"denormalization_context"={"groups"={"write"}},
- *         	"openapi_context" = {
- *         		"summary" = "Versie terugdraaid",
- *         		"description" = "Herstel een eerdere versie van dit object. Dit is een destructieve actie die niet ongedaan kan worden gemaakt",
- *          	"consumes" = {
- *              	"application/json",
- *               	"text/html",
- *            	},
- *             	"produces" = {
- *         			"application/json"
- *            	},
- *             	"responses" = {
- *         			"202" = {
- *         				"description" = "Terug gedraaid naar eerdere versie"
- *         			},	
- *         			"400" = {
- *         				"description" = "Ongeldige aanvraag"
- *         			},
- *         			"404" = {
- *         				"description" = "Huwelijk of aanvraag niet gevonden"
- *         			}
- *            	}            
+ *         		"summary" = "Logboek",
+ *         		"description" = "Bekijk de wijzigingen op dit persoon object."
  *         }
  *     }
  *  }
@@ -157,15 +107,12 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
 class Persoon implements StringableInterface
 {
 	/**
-	 * Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>
-	 * 
-	 * @var int|null
-	 *
 	 * @ORM\Id
-	 * @ORM\GeneratedValue
-	 * @ORM\Column(type="integer", options={"unsigned": true})
-	 * @Groups({"read", "write"})
-	 * @ApiProperty(iri="https://schema.org/identifier")
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 * @ApiFilter(SearchFilter::class, strategy="exact")
+	 * @ApiFilter(OrderFilter::class)
+	 * @Groups({"persoon:lezen"})
 	 */
 	public $id;
 	
@@ -182,7 +129,7 @@ class Persoon implements StringableInterface
 	 *      max = 40,
 	 *      maxMessage = "Het RSIN kan niet langer dan {{ limit }} karakters zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 *     attributes={
 	 *         "openapi_context"={
@@ -211,7 +158,7 @@ class Persoon implements StringableInterface
 	 *      minMessage = "Het RSIN moet ten minste {{ limit }} karakters lang zijn",
 	 *      maxMessage = "Het RSIN kan niet langer dan {{ limit }} karakters zijn"
 	 * )
-	 * @Groups({"read"})
+	 * @Groups({"persoon:lezen"})
 	 * @ApiFilter(SearchFilter::class, strategy="exact")
 	 * @ApiFilter(OrderFilter::class)
 	 * @ApiProperty(
@@ -242,7 +189,7 @@ class Persoon implements StringableInterface
 	 *      max = 40,
 	 *      maxMessage = "Het RSIN kan niet langer dan {{ limit }} karakters zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
      * @ApiFilter(SearchFilter::class, strategy="exact")
      * @ApiFilter(OrderFilter::class)
 	 * @ApiProperty(
@@ -279,7 +226,7 @@ class Persoon implements StringableInterface
 	 *      minMessage = "Het email addres moet minimaal  {{ limit }} tekens lang zijn",
 	 *      maxMessage = "Het email addresm mag maximaal {{ limit }} tekens lang zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
      * @ApiFilter(SearchFilter::class, strategy="partial")
      * @ApiFilter(OrderFilter::class)
 	 * @ApiProperty(
@@ -308,7 +255,7 @@ class Persoon implements StringableInterface
 	 *      minMessage = "Het telefoonnummer moet minimaal {{ limit }} tekens lang zijn",
 	 *      maxMessage = "Het telefoonnummer mag maximaal {{ limit }} tekens lang zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
      * @ApiFilter(SearchFilter::class, strategy="partial")
      * @ApiFilter(OrderFilter::class)
 	 * @ApiProperty(
@@ -337,7 +284,7 @@ class Persoon implements StringableInterface
 	 *      minMessage = "Het telefoonnummer moet minimaal {{ limit }} tekens lang zijn",
 	 *      maxMessage = "Het telefoonnummer mag maximaal {{ limit }} tekens lang zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
      * @ApiFilter(SearchFilter::class, strategy="partial")
      * @ApiFilter(OrderFilter::class)
 	 * @ApiProperty(
@@ -366,7 +313,7 @@ class Persoon implements StringableInterface
 	 *      minMessage = "Het telefoonnummer moet minimaal {{ limit }} tekens lang zijn",
 	 *      maxMessage = "Het telefoonnummer mag maximaal {{ limit }} tekens lang zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 * 	   iri="http://schema.org/name",
 	 *     attributes={
@@ -393,7 +340,7 @@ class Persoon implements StringableInterface
 	 *      minMessage = "Het telefoonnummer moet minimaal {{ limit }} tekens lang zijn",
 	 *      maxMessage = "Het telefoonnummer mag maximaal {{ limit }} tekens lang zijn"
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 * 	   iri="http://schema.org/name",
 	 *     attributes={
@@ -413,6 +360,7 @@ class Persoon implements StringableInterface
 	 * @var Array Verwijzing naar de BRP inschrijving van ouders
 	 *
 	 * @ORM\Column(type="json", nullable=true)
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 *     attributes={
 	 *         "openapi_context"={
@@ -428,6 +376,7 @@ class Persoon implements StringableInterface
 	 * @var Array Verwijzing naar de BRP inschrijving van partners
 	 *
 	 * @ORM\Column(type="json", nullable=true)
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 *     attributes={
 	 *         "openapi_context"={
@@ -443,6 +392,7 @@ class Persoon implements StringableInterface
 	 * @var Array Verwijzing naar de BRP inschrijving van kinderen
 	 *
 	 * @ORM\Column(type="json", nullable=true)
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 *     attributes={
 	 *         "openapi_context"={
@@ -455,36 +405,48 @@ class Persoon implements StringableInterface
 	public $kinderen;	
 	
 	/**
+	 * @ApiProperty()
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Naam",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $aanschrijving;
 	
 	/**
+	 * @ApiProperty()
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Naam",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $naam;
 	
 	/**
+	 * @ApiProperty()
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Adres",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $verblijfadres;
 		
 	/**
+	 * @ApiProperty()
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Adres",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $postadres;
 	
 	/**
+	 * @ApiProperty()
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\OneToOne(targetEntity="App\Entity\Persoon\Geboorte",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $geboorte;
 	
 	/**
+	 * @ApiProperty()
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\OneToOne(targetEntity="App\Entity\Persoon\Overlijden", cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
@@ -497,7 +459,7 @@ class Persoon implements StringableInterface
 	 *     type     = "string",
 	 *     nullable = true
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 *     attributes={
 	 *         "openapi_context"={
@@ -523,7 +485,7 @@ class Persoon implements StringableInterface
 	 *     type     = "string",
 	 *     length   = 17
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @Assert\Language
 	 * @Assert\Length(
 	 *      min = 2,
@@ -554,7 +516,7 @@ class Persoon implements StringableInterface
 	 * @ORM\Column(
 	 *     type     = "datetime"
 	 * )
-	 * @Groups({"read"})
+	 * @Groups({"persoon:lezen"})
 	 */
 	public $registratiedatum;
 	
@@ -568,7 +530,7 @@ class Persoon implements StringableInterface
 	 *     type     = "datetime",
 	 *     nullable	= true
 	 * )
-	 * @Groups({"read"})
+	 * @Groups({"persoon:lezen"})
 	 */
 	public $wijzigingsdatum;
 	
@@ -579,7 +541,7 @@ class Persoon implements StringableInterface
 	 *     type     = "string",
 	 *     nullable = true
 	 * )
-	 * @Groups({"read", "write"})
+	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ApiProperty(
 	 *     attributes={
 	 *         "openapi_context"={
@@ -603,7 +565,7 @@ class Persoon implements StringableInterface
 	 *
 	 * @Gedmo\Blameable(on="create")
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Applicatie")
-	 * @Groups({"read"})
+	 * @Groups({"persoon:lezen"})
 	 */
 	public $eigenaar;
 	
