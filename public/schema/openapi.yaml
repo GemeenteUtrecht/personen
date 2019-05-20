@@ -391,27 +391,27 @@ paths:
       summary: 'Logboek inzien'
       description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
-        - wijziging
+        - Wijziging
       operationId: getWijzigingCollection
       responses:
         200:
-          description: 'wijziging collection response'
+          description: 'Wijziging collection response'
           content:
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/wijziging'
+                  $ref: '#/components/schemas/Wijziging'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/wijziging'
+                  $ref: '#/components/schemas/Wijziging'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/wijziging'
+                  $ref: '#/components/schemas/Wijziging'
       parameters:
         -
           name: bronOrganisatie
@@ -439,21 +439,21 @@ paths:
       summary: 'Logboek inzien'
       description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
-        - wijziging
+        - Wijziging
       operationId: postWijzigingCollection
       responses:
         201:
-          description: 'wijziging resource created'
+          description: 'Wijziging resource created'
           content:
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
             application/json:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
             text/html:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
           links:
             GetWijzigingItem:
               parameters:
@@ -468,20 +468,20 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/wijziging'
+              $ref: '#/components/schemas/Wijziging'
           application/json:
             schema:
-              $ref: '#/components/schemas/wijziging'
+              $ref: '#/components/schemas/Wijziging'
           text/html:
             schema:
-              $ref: '#/components/schemas/wijziging'
-        description: 'The new wijziging resource'
+              $ref: '#/components/schemas/Wijziging'
+        description: 'The new Wijziging resource'
   '/personen/{id}':
     get:
       summary: 'Logboek inzien'
       description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
-        - wijziging
+        - Wijziging
       operationId: getWijzigingItem
       parameters:
         -
@@ -492,24 +492,24 @@ paths:
             type: string
       responses:
         200:
-          description: 'wijziging resource response'
+          description: 'Wijziging resource response'
           content:
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
             application/json:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
             text/html:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
         404:
           description: 'Resource not found'
     put:
       summary: 'Logboek inzien'
       description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
-        - wijziging
+        - Wijziging
       operationId: putWijzigingItem
       parameters:
         -
@@ -520,17 +520,17 @@ paths:
             type: string
       responses:
         200:
-          description: 'wijziging resource updated'
+          description: 'Wijziging resource updated'
           content:
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
             application/json:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
             text/html:
               schema:
-                $ref: '#/components/schemas/wijziging'
+                $ref: '#/components/schemas/Wijziging'
         400:
           description: 'Invalid input'
         404:
@@ -539,23 +539,23 @@ paths:
         content:
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/wijziging'
+              $ref: '#/components/schemas/Wijziging'
           application/json:
             schema:
-              $ref: '#/components/schemas/wijziging'
+              $ref: '#/components/schemas/Wijziging'
           text/html:
             schema:
-              $ref: '#/components/schemas/wijziging'
-        description: 'The updated wijziging resource'
+              $ref: '#/components/schemas/Wijziging'
+        description: 'The updated Wijziging resource'
     delete:
       summary: 'Logboek inzien'
       description: 'Geeft een array van eerdere versies en wijzigingen van dit object'
       tags:
-        - wijziging
+        - Wijziging
       operationId: deleteWijzigingItem
       responses:
         204:
-          description: 'wijziging resource deleted'
+          description: 'Wijziging resource deleted'
         404:
           description: 'Resource not found'
       parameters:
@@ -582,7 +582,7 @@ paths:
         404:
           description: 'Huwelijk of aanvraag niet gevonden'
       tags:
-        - wijziging
+        - Wijziging
       operationId: logWijzigingItem
       parameters:
         -
@@ -608,20 +608,20 @@ paths:
         404:
           description: 'Huwelijk of aanvraag niet gevonden'
       tags:
-        - wijziging
+        - Wijziging
       operationId: revertWijzigingItem
       requestBody:
         content:
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/wijziging-write'
+              $ref: '#/components/schemas/Wijziging-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/wijziging-write'
+              $ref: '#/components/schemas/Wijziging-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/wijziging-write'
-        description: 'The new wijziging resource'
+              $ref: '#/components/schemas/Wijziging-write'
+        description: 'The new Wijziging resource'
   /registreer:
     post:
       summary: Registreren
@@ -836,24 +836,11 @@ components:
           maxLength: 9
           minLength: 8
           description: 'Het RSIN van de organisatie waartoe deze Persoon behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef. <br> Het RSIN word bepaald aan de hand van de gauthenticeerde applicatie en kan niet worden overschreven'
-        voornamen:
+        burgerservicenummer:
           type: string
-          maxLength: 255
-          minLength: 2
-          example: John
-          description: 'De naam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
-        voorvoegselGeslachtsnaam:
-          type: string
-          maxLength: 255
-          minLength: 2
-          example: 'van der'
-          description: 'Voorvoegsel van de achternaam <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
-        geslachtsnaam:
-          type: string
-          maxLength: 255
-          minLength: 2
-          example: Do
-          description: 'De achternaam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>'
+          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
+          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          maxLength: 40
         emailadres:
           type: email
           maxLength: 255
@@ -866,6 +853,42 @@ components:
           minLength: 10
           example: +31(0)6-12345678
           description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        faxNummer:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        websiteUrl:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        aandudingNaamsgebruik:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        ouders:
+          type: string
+          example: '[]'
+          description: 'Verwijzing naar de BRP inschrijving van ouders'
+          items:
+            type: string
+        partners:
+          type: string
+          example: '[]'
+          description: 'Verwijzing naar de BRP inschrijving van partners'
+          items:
+            type: string
+        kinderen:
+          type: string
+          example: '[]'
+          description: 'Verwijzing naar de BRP inschrijving van kinderen'
+          items:
+            type: string
         agenda:
           type: url
           example: 'https://ref.tst.vng.cloud/zrc/api/v1/zaken/24524f1c-1c14-4801-9535-22007b8d1b65'
@@ -898,7 +921,18 @@ components:
         eigenaar:
           description: 'Met eigenaar wordt bijgehouden welke  applicatie verantwoordelijk is voor het object, en daarvoor de rechten beheerd en uitgeeft. In die zin moet de eigenaar dan ook worden gezien in de trant van autorisatie en configuratie in plaats van als onderdeel van het datamodel.'
           type: string
-        huwelijkspartner: {  }
+        verblijfadres:
+          type: string
+        postadres:
+          type: string
+        geboorte:
+          type: string
+        overlijden:
+          type: string
+        aanschrijving:
+          type: string
+        naam:
+          type: string
     Persoon-read:
       type: object
       description: Persoon
@@ -919,24 +953,11 @@ components:
           maxLength: 9
           minLength: 8
           description: 'Het RSIN van de organisatie waartoe deze Persoon behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef. <br> Het RSIN word bepaald aan de hand van de gauthenticeerde applicatie en kan niet worden overschreven'
-        voornamen:
+        burgerservicenummer:
           type: string
-          maxLength: 255
-          minLength: 2
-          example: John
-          description: 'De naam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
-        voorvoegselGeslachtsnaam:
-          type: string
-          maxLength: 255
-          minLength: 2
-          example: 'van der'
-          description: 'Voorvoegsel van de achternaam <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
-        geslachtsnaam:
-          type: string
-          maxLength: 255
-          minLength: 2
-          example: Do
-          description: 'De achternaam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>'
+          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
+          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          maxLength: 40
         emailadres:
           type: email
           maxLength: 255
@@ -944,6 +965,24 @@ components:
           example: john@do.nl
           description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
         telefoonnummer:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        faxNummer:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        websiteUrl:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        aandudingNaamsgebruik:
           type: string
           maxLength: 255
           minLength: 10
@@ -993,24 +1032,11 @@ components:
           example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
           description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
           maxLength: 40
-        voornamen:
+        burgerservicenummer:
           type: string
-          maxLength: 255
-          minLength: 2
-          example: John
-          description: 'De naam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
-        voorvoegselGeslachtsnaam:
-          type: string
-          maxLength: 255
-          minLength: 2
-          example: 'van der'
-          description: 'Voorvoegsel van de achternaam <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
-        geslachtsnaam:
-          type: string
-          maxLength: 255
-          minLength: 2
-          example: Do
-          description: 'De achternaam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>'
+          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
+          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          maxLength: 40
         emailadres:
           type: email
           maxLength: 255
@@ -1018,6 +1044,24 @@ components:
           example: john@do.nl
           description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
         telefoonnummer:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        faxNummer:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        websiteUrl:
+          type: string
+          maxLength: 255
+          minLength: 10
+          example: +31(0)6-12345678
+          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+        aandudingNaamsgebruik:
           type: string
           maxLength: 255
           minLength: 10
@@ -1044,7 +1088,7 @@ components:
           maxLength: 255
           format: uri
           description: 'Het contact persoon voor deze Persoon'
-    wijziging:
+    Wijziging:
       type: object
       description: Wijziging
       properties:
@@ -1120,7 +1164,7 @@ components:
           description: 'De eigenaar (applicatie) van dit object, wordt bepaald aan de hand van de geauthenticeerde applicatie die de Wijziging heeft aangemaakt'
           type: string
         huwelijkspartner: {  }
-    wijziging-read:
+    Wijziging-read:
       type: object
       description: Wijziging
       properties:
@@ -1195,7 +1239,7 @@ components:
         eigenaar:
           description: 'De eigenaar (applicatie) van dit object, wordt bepaald aan de hand van de geauthenticeerde applicatie die de Wijziging heeft aangemaakt'
           type: string
-    wijziging-write:
+    Wijziging-write:
       type: object
       description: Wijziging
       properties:
@@ -1275,7 +1319,7 @@ x-tagGroups:
   -
     name: BRP
     tags:
-      - Personen
+      - Persoon
   -
     name: Applicatie
     tags:

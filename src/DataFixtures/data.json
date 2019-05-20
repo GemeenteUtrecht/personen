@@ -1,0 +1,1512 @@
+{
+    "count": 25,
+    "results": [
+{
+"url": "{base)url}/natuurlijke_personen/da02a3ac-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02a3ac-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "663678651",
+"emailadres": "SanneVlasman@gmail.com",
+"telefoonnummer": "(06)594-38-045",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Sanne",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Vlasman"
+            },
+"naam": {
+"voornamen": "Sanne",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Vlasman"
+            },
+"partner":{},
+"ouders": [
+
+
+            ],
+"kinderen": [
+{"url": "{base)url}/natuurlijke_personen/da02f050-4412-11e9-b210-d663bd873d93"},
+{"url": "{base)url}/natuurlijke_personen/da02f1ae-4412-11e9-b210-d663bd873d93"}
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Domplein",
+"huisnummer": 21,
+"postcode": "3512JC",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Domplein",
+"huisnummer": 21,
+"postcode": "3512JC",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "05/07/1970",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02ad5c-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02ad5c-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "97034666",
+"emailadres": "JurrienHofmans@gmail.com",
+"telefoonnummer": "(06)946-26-320",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Jurrien",
+"voorletters": "J.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Hofmans"
+            },
+"naam": {
+"voornamen": "Jurrien",
+"voorletters": "J.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Hofmans"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 2,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 2,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "09/06/1974",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02b09a-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02b09a-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "107555396",
+"emailadres": "StefaanHarten@gmail.com",
+"telefoonnummer": "(06)279-87-529",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Stefaan",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Harten"
+            },
+"naam": {
+"voornamen": "Stefaan",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Harten"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 3,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 3,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "11/02/1975",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02b2fc-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02b2fc-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "425749708",
+"emailadres": "MathijnRuiter@gmail.com",
+"telefoonnummer": "(06)129-87-931",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Mathijn",
+"voorletters": "M.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Ruiter"
+            },
+"naam": {
+"voornamen": "Mathijn",
+"voorletters": "M.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Ruiter"
+            },
+"partner":{ "url": "{base)url}/natuurlijke_personen/da02ca58-4412-11e9-b210-d663bd873d93"},
+"ouders": [
+0
+            ],
+"kinderen": [
+{"url": "{base)url}/natuurlijke_personen/da02eefc-4412-11e9-b210-d663bd873d93"}
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 4,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 4,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "20/05/1975",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02b5a4-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02b5a4-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "399203230",
+"emailadres": "MarnixOlthof@gmail.com",
+"telefoonnummer": "(06)363-75-838",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Marnix",
+"voorletters": "M.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Olthof"
+            },
+"naam": {
+"voornamen": "Marnix",
+"voorletters": "M.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Olthof"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Parkhaven",
+"huisnummer": 20,
+"postcode": "3016GM",
+"woonplaats": "Rotterdam"
+            },
+"postadres": {
+"straatnaam": "Parkhaven",
+"huisnummer": 20,
+"postcode": "3016GM",
+"woonplaats": "Rotterdam"
+            },
+"geboorte": {
+"datum": "01/05/1976",
+"land": "Nederland",
+"stad": "Rotterdam"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02b86a-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02b86a-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "647717529",
+"emailadres": "WalterKoek@gmail.com",
+"telefoonnummer": "(06)615-43-231",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Walter",
+"voorletters": "W.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Koek"
+            },
+"naam": {
+"voornamen": "Walter",
+"voorletters": "W.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Koek"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Nieuwezijds Voorburgwal",
+"huisnummer": 147,
+"postcode": "1012RJ",
+"woonplaats": "Amsterdam"
+            },
+"postadres": {
+"straatnaam": "Nieuwezijds Voorburgwal",
+"huisnummer": 147,
+"postcode": "1012RJ",
+"woonplaats": "Amsterdam"
+            },
+"geboorte": {
+"datum": "28/05/1977",
+"land": "Nederland",
+"stad": "Amsterdam"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02ba22-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02ba22-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "512264326",
+"emailadres": "ArjenSchotgerrits@gmail.com",
+"telefoonnummer": "(06)840-95-294",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Arjen",
+"voorletters": "A.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Schotgerrits"
+            },
+"naam": {
+"voornamen": "Arjen",
+"voorletters": "A.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Schotgerrits"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Binnenhof",
+"huisnummer": 22,
+"postcode": "2513AA",
+"woonplaats": "Den Haag"
+            },
+"postadres": {
+"straatnaam": "Binnenhof",
+"huisnummer": 22,
+"postcode": "2513AA",
+"woonplaats": "Den Haag"
+            },
+"geboorte": {
+"datum": "30/03/1978",
+"land": "Nederland",
+"stad": "Den Haag"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02bb8a-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02bb8a-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "658099747",
+"emailadres": "HuibKolvoort@gmail.com",
+"telefoonnummer": "(06)871-61-798",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Huib",
+"voorletters": "H.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Kolvoort"
+            },
+"naam": {
+"voornamen": "Huib",
+"voorletters": "H.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Kolvoort"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Lange Poten",
+"huisnummer": 4,
+"postcode": "2511CL",
+"woonplaats": "Den Haag"
+            },
+"postadres": {
+"straatnaam": "Lange Poten",
+"huisnummer": 4,
+"postcode": "2511CL",
+"woonplaats": "Den Haag"
+            },
+"geboorte": {
+"datum": "19/10/1981",
+"land": "Nederland",
+"stad": "Den Haag"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02c418-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02c418-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "584992956",
+"emailadres": "Hendrik-JanKatenhorst@gmail.com",
+"telefoonnummer": "(06)812-38-382",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Hendrik-Jan",
+"voorletters": "H.J.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Katenhorst"
+            },
+"naam": {
+"voornamen": "Hendrik-Jan",
+"voorletters": "H.J.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Katenhorst"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Frederiklaan",
+"huisnummer": 10,
+"postcode": "5616NH",
+"woonplaats": "Eindhoven"
+            },
+"postadres": {
+"straatnaam": "Frederiklaan",
+"huisnummer": 10,
+"postcode": "5616NH",
+"woonplaats": "Eindhoven"
+            },
+"geboorte": {
+"datum": "09/11/1982",
+"land": "Nederland",
+"stad": "Eindhoven"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02c77e-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02c77e-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "248496086",
+"emailadres": "KeesHoning@gmail.com",
+"telefoonnummer": "(06)167-24-224",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Kees",
+"voorletters": "K.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Honing"
+            },
+"naam": {
+"voornamen": "Kees",
+"voorletters": "K.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Honing"
+            },
+"partner":{ "url": "{base)url}/natuurlijke_personen/da02b2fc-4412-11e9-b210-d663bd873d93"},
+"ouders": [
+0
+            ],
+"kinderen": [
+{"url": "{base)url}/natuurlijke_personen/da02eefc-4412-11e9-b210-d663bd873d93"}
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 10,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 10,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "20/06/1983",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02ca58-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02ca58-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "58249163",
+"emailadres": "LinnekePoll@gmail.com",
+"telefoonnummer": "(06)432-51-968",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Linneke",
+"voorletters": "L.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Poll"
+            },
+"naam": {
+"voornamen": "Linneke",
+"voorletters": "L.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Poll"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 11,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 11,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "25/11/1984",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02cd1e-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02cd1e-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "283074796",
+"emailadres": "RoosmarijnBeuze@gmail.com",
+"telefoonnummer": "(06)489-76-199",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Roosmarijn",
+"voorletters": "R.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Beuze"
+            },
+"naam": {
+"voornamen": "Roosmarijn",
+"voorletters": "R.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Beuze"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Parkhaven",
+"huisnummer": 20,
+"postcode": "3016GM",
+"woonplaats": "Rotterdam"
+            },
+"postadres": {
+"straatnaam": "Parkhaven",
+"huisnummer": 20,
+"postcode": "3016GM",
+"woonplaats": "Rotterdam"
+            },
+"geboorte": {
+"datum": "08/01/1987",
+"land": "Nederland",
+"stad": "Rotterdam"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02cfda-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02cfda-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "992654841",
+"emailadres": "AnnemijnVerduijn@gmail.com",
+"telefoonnummer": "(06)381-09-782",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Annemijn",
+"voorletters": "A.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Verduijn"
+            },
+"naam": {
+"voornamen": "Annemijn",
+"voorletters": "A.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Verduijn"
+            },
+"partner":{ "url": "{base)url}/natuurlijke_personen/da02d7aa-4412-11e9-b210-d663bd873d93"},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Nieuwezijds Voorburgwal",
+"huisnummer": 147,
+"postcode": "1012RJ",
+"woonplaats": "Amsterdam"
+            },
+"postadres": {
+"straatnaam": "Nieuwezijds Voorburgwal",
+"huisnummer": 147,
+"postcode": "1012RJ",
+"woonplaats": "Amsterdam"
+            },
+"geboorte": {
+"datum": "18/02/1988",
+"land": "Nederland",
+"stad": "Amsterdam"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02d7aa-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02d7aa-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "989229695",
+"emailadres": "AnemoonLangen@gmail.com",
+"telefoonnummer": "(06)047-89-004",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Anemoon",
+"voorletters": "A.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Langen"
+            },
+"naam": {
+"voornamen": "Anemoon",
+"voorletters": "A.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Langen"
+            },
+"partner":{ "url": "{base)url}/natuurlijke_personen/da02cfda-4412-11e9-b210-d663bd873d93"},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Binnenhof",
+"huisnummer": 22,
+"postcode": "2513AA",
+"woonplaats": "Den Haag"
+            },
+"postadres": {
+"straatnaam": "Binnenhof",
+"huisnummer": 22,
+"postcode": "2513AA",
+"woonplaats": "Den Haag"
+            },
+"geboorte": {
+"datum": "22/11/1988",
+"land": "Nederland",
+"stad": "Den Haag"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02da84-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02da84-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "522159072",
+"emailadres": "ToosAlberst@gmail.com",
+"telefoonnummer": "(06)010-15-813",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Toos",
+"voorletters": "T.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Alberst"
+            },
+"naam": {
+"voornamen": "Toos",
+"voorletters": "T.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Alberst"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Parkhaven",
+"huisnummer": 20,
+"postcode": "3016GM",
+"woonplaats": "Rotterdam"
+            },
+"postadres": {
+"straatnaam": "Parkhaven",
+"huisnummer": 20,
+"postcode": "3016GM",
+"woonplaats": "Rotterdam"
+            },
+"geboorte": {
+"datum": "05/12/1988",
+"land": "Nederland",
+"stad": "Rotterdam"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02dd4a-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02dd4a-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "187788248",
+"emailadres": "TreesHasz@gmail.com",
+"telefoonnummer": "(06)234-27-347",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Trees",
+"voorletters": "T.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Hasz"
+            },
+"naam": {
+"voornamen": "Trees",
+"voorletters": "T.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Hasz"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Nieuwezijds Voorburgwal",
+"huisnummer": 147,
+"postcode": "1012RJ",
+"woonplaats": "Amsterdam"
+            },
+"postadres": {
+"straatnaam": "Nieuwezijds Voorburgwal",
+"huisnummer": 147,
+"postcode": "1012RJ",
+"woonplaats": "Amsterdam"
+            },
+"geboorte": {
+"datum": "30/03/1990",
+"land": "Nederland",
+"stad": "Amsterdam"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02deee-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02deee-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "437862653",
+"emailadres": "SofieVerheijen@gmail.com",
+"telefoonnummer": "(06)255-55-923",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Sofie",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Verheijen"
+            },
+"naam": {
+"voornamen": "Sofie",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Verheijen"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Binnenhof",
+"huisnummer": 22,
+"postcode": "2513AA",
+"woonplaats": "Den Haag"
+            },
+"postadres": {
+"straatnaam": "Binnenhof",
+"huisnummer": 22,
+"postcode": "2513AA",
+"woonplaats": "Den Haag"
+            },
+"geboorte": {
+"datum": "03/07/1990",
+"land": "Nederland",
+"stad": "Den Haag"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02e150-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02e150-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "501511441",
+"emailadres": "VeerleKlerk@gmail.com",
+"telefoonnummer": "(06)244-45-546",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Veerle",
+"voorletters": "V.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Klerk"
+            },
+"naam": {
+"voornamen": "Veerle",
+"voorletters": "V.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Klerk"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Lange Poten",
+"huisnummer": 4,
+"postcode": "2511CL",
+"woonplaats": "Den Haag"
+            },
+"postadres": {
+"straatnaam": "Lange Poten",
+"huisnummer": 4,
+"postcode": "2511CL",
+"woonplaats": "Den Haag"
+            },
+"geboorte": {
+"datum": "14/09/1991",
+"land": "Nederland",
+"stad": "Den Haag"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02e434-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02e434-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "664707269",
+"emailadres": "KrisjeBouwknegt@gmail.com",
+"telefoonnummer": "(06)385-71-923",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Krisje",
+"voorletters": "K.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Bouwknegt"
+            },
+"naam": {
+"voornamen": "Krisje",
+"voorletters": "K.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Bouwknegt"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Frederiklaan",
+"huisnummer": 10,
+"postcode": "5616NH",
+"woonplaats": "Eindhoven"
+            },
+"postadres": {
+"straatnaam": "Frederiklaan",
+"huisnummer": 10,
+"postcode": "5616NH",
+"woonplaats": "Eindhoven"
+            },
+"geboorte": {
+"datum": "23/05/1994",
+"land": "Nederland",
+"stad": "Eindhoven"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02e6fa-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02e6fa-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "36470909",
+"emailadres": "LeentjeDuboa@gmail.com",
+"telefoonnummer": "(06)583-80-835",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Leentje",
+"voorletters": "L.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Duboa"
+            },
+"naam": {
+"voornamen": "Leentje",
+"voorletters": "L.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Duboa"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 20,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 20,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "04/06/1995",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02ebdc-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02ebdc-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "649891338",
+"emailadres": "MarlijnVliet@gmail.com",
+"telefoonnummer": "(06)387-30-184",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Marlijn",
+"voorletters": "M.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Vliet"
+            },
+"naam": {
+"voornamen": "Marlijn",
+"voorletters": "M.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Vliet"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 21,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 21,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "12/03/1996",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02ed8a-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02ed8a-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "581536630",
+"emailadres": "NoutMossink@gmail.com",
+"telefoonnummer": "(06)494-52-210",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Nout",
+"voorletters": "N.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Mossink"
+            },
+"naam": {
+"voornamen": "Nout",
+"voorletters": "N.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Mossink"
+            },
+"partner":{},
+"ouders": [
+0
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 22,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 22,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "03/07/1996",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02eefc-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02eefc-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "750461986",
+"emailadres": "NaudJonkman@gmail.com",
+"telefoonnummer": "(06)037-68-697",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Naud",
+"voorletters": "N.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Jonkman"
+            },
+"naam": {
+"voornamen": "Naud",
+"voorletters": "N.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Jonkman"
+            },
+"partner":{},
+"ouders": [
+{"url": "{base)url}/natuurlijke_personen/da02b2fc-4412-11e9-b210-d663bd873d93"},
+{"url": "{base)url}/natuurlijke_personen/da02ca58-4412-11e9-b210-d663bd873d93"}
+            ],
+"kinderen": [
+
+
+            ],
+"aanduding_naamsgebruik": "M",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 23,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 23,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "07/06/1999",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        }
+,
+{
+"url": "{base)url}/natuurlijke_personen/da02f050-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02f050-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "914355302",
+"emailadres": "KatrienKlaver@gmail.com",
+"telefoonnummer": "(06)702-14-088",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Katrien",
+"voorletters": "K.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Klaver"
+            },
+"naam": {
+"voornamen": "Katrien",
+"voorletters": "K.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Klaver"
+            },
+"partner":{},
+"ouders": [
+{"url": "{base)url}/natuurlijke_personen/da02a3ac-4412-11e9-b210-d663bd873d93"}
+            ],
+"kinderen": [
+0
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Domplein",
+"huisnummer": 21,
+"postcode": "3512JC",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Domplein",
+"huisnummer": 21,
+"postcode": "3512JC",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "16/04/2000",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        },
+{
+"url": "{base)url}/natuurlijke_personen/da02f1ae-4412-11e9-b210-d663bd873d93",
+"identificatie": "da02f1ae-4412-11e9-b210-d663bd873d93",
+"burgerservicenummer": "294433351",
+"emailadres": "SophieBargerink@gmail.com",
+"telefoonnummer": "(06)066-70-516",
+"fax-nummer": "",
+"website-url": "",
+"bankrekening": {
+"IBAN":"",
+"BIC":"",
+"SWIFT":"",
+"kvk-nummer": "",
+"ternaamstelling": ""
+            },
+"aanschrijving": {
+"voornamen": "Sophie",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Bargerink"
+            },
+"naam": {
+"voornamen": "Sophie",
+"voorletters": "S.",
+"adelijke_titel": "",
+"voorvoegsel_geslachtsnaam": "",
+"geslachtsnaam": "Bargerink"
+            },
+"partner":{},
+"ouders": [
+{"url": "{base)url}/natuurlijke_personen/da02a3ac-4412-11e9-b210-d663bd873d93"}
+
+            ],
+"kinderen": [
+
+
+            ],
+"aanduding_naamsgebruik": "V",
+"verblijfadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 25,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"postadres": {
+"straatnaam": "Stadsplateau",
+"huisnummer": 25,
+"postcode": "3521AZ",
+"woonplaats": "Utrecht"
+            },
+"geboorte": {
+"datum": "11/10/2000",
+"land": "Nederland",
+"stad": "Utrecht"
+            },
+"overlijden": {
+"datum": "",
+"land": "",
+"stad": ""
+            }
+        }
+]
+}

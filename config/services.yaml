@@ -90,7 +90,7 @@ parameters:
         x-tagGroups:
             - name: BRP
               tags:
-              - Personen
+              - Persoon
             - name: Applicatie
               tags:
               - Applicatie
