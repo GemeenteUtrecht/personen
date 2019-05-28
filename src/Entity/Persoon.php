@@ -36,8 +36,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  * @ApiResource(
  *  collectionOperations={
  *  	"get"={
- *  		"normalizationContext"={"groups"={"persoon:lezen"}},
- *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
+ *  		"normalizationContext"={"groups"={"persoon:lezen"},"enable_max_depth" = true, "circular_reference_handler"},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"},"enable_max_depth" = true, "circular_reference_handler"},
  *      	"path"="/personen",
  *  		"openapi_context" = {
  * 				"summary" = "Verzameling",
@@ -45,19 +45,19 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		}
  *  	},
  *     "post"={
- *  		"normalizationContext"={"groups"={"persoon:lezen"}},
- *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
+ *  		"normalizationContext"={"groups"={"persoon:lezen"},"enable_max_depth" = true, "circular_reference_handler"},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"},"enable_max_depth" = true, "circular_reference_handler"},
  *      	"path"="/personen",
  *  		"openapi_context" = {
  * 				"summary" = "Maak aan",
  *         		"description" = "Maak een persoon aan."
  *  		}
- *  	}
+ *  	},
  *  },
  * 	itemOperations={
  *     "get"={
- *  		"normalizationContext"={"groups"={"persoon:lezen"}},
- *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
+ *  		"normalizationContext"={"groups"={"persoon:lezen"},"enable_max_depth" = true, "circular_reference_handler"},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"},"enable_max_depth" = true, "circular_reference_handler"},
  *      	"path"="/persoon/{id}",
  *  		"openapi_context" = {
  * 				"summary" = "Haal op",
@@ -65,8 +65,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		}
  *  	},
  *     "put"={
- *  		"normalizationContext"={"groups"={"persoon:lezen"}},
- *  		"denormalizationContext"={"groups"={"persoon:schrijven"}},
+ *  		"normalizationContext"={"groups"={"persoon:lezen"},"enable_max_depth" = true, "circular_reference_handler"},
+ *  		"denormalizationContext"={"groups"={"persoon:schrijven"},"enable_max_depth" = true, "circular_reference_handler"},
  *      	"path"="/persoon/{id}",
  *  		"openapi_context" = {
  * 				"summary" = "Werk bij",
@@ -74,8 +74,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *  		}
  *  	},
  *     "delete"={
- *  		"normalizationContext"={"groups"={"persoon:lezen"}},
- *  		"denormalizationContext"={"groups"={"persoon:verwijderen"}},
+ *  		"normalizationContext"={"groups"={"persoon:lezen"},"enable_max_depth" = true, "circular_reference_handler"},
+ *  		"denormalizationContext"={"groups"={"persoon:verwijderen"},"enable_max_depth" = true, "circular_reference_handler"},
  *      	"path"="/persoon/{id}",
  *  		"openapi_context" = {
  * 				"summary" = "Verwijder een specifiek persoon"
@@ -85,8 +85,8 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  *         	"method"="GET",
  *         	"path"="/persoon/{id}/log",
  *          "controller"= UserController::class,
- *     		"normalization_context"={"groups"={"persoon:lezen"}},
- *     		"denormalization_context"={"groups"={"persoon:schrijven"}},
+ *     		"normalization_context"={"groups"={"persoon:lezen"},"enable_max_depth" = true, "circular_reference_handler"},
+ *     		"denormalization_context"={"groups"={"persoon:schrijven"},"enable_max_depth" = true, "circular_reference_handler"},
  *         	"openapi_context" = {
  *         		"summary" = "Logboek",
  *         		"description" = "Bekijk de wijzigingen op dit persoon object."
@@ -177,7 +177,7 @@ class Persoon implements StringableInterface
 	public $bronOrganisatie;
 	
 	/**
-	 * De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>
+	 * Een burger service nummer
 	 *
 	 * @var string
 	 * @ORM\Column(
@@ -187,7 +187,7 @@ class Persoon implements StringableInterface
 	 * )
 	 * @Assert\Length(
 	 *      max = 40,
-	 *      maxMessage = "Het RSIN kan niet langer dan {{ limit }} karakters zijn"
+	 *      maxMessage = "Het BSN kan niet langer dan {{ limit }} karakters zijn"
 	 * )
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
      * @ApiFilter(SearchFilter::class, strategy="exact")
@@ -196,8 +196,8 @@ class Persoon implements StringableInterface
 	 *     attributes={
 	 *         "openapi_context"={
 	 *             "type"="string",
-	 *             "example"="6a36c2c4-213e-4348-a467-dfa3a30f64aa",
-	 *             "description"="De unieke identificatie van dit object de organisatie die dit object heeft gecreeerd.",
+	 *             "example"="123456789",
+	 *             "description"="Een burger service nummer",
 	 *             "maxLength"=40
 	 *         }
 	 *     }
@@ -274,7 +274,7 @@ class Persoon implements StringableInterface
 	public $telefoonnummer;
 	
 	/**
-	 * Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>
+	 * Het fax nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>
 	 *
 	 * @var string
 	 *
@@ -294,7 +294,7 @@ class Persoon implements StringableInterface
 	 *             "type"="string",
 	 *             "maxLength"=255,
 	 *             "minLength"=10,
-	 *             "example"="+31(0)6-12345678"
+	 *             "example"="+31(0)20-1234567"
 	 *         }
 	 *     }
 	 * )
@@ -303,7 +303,7 @@ class Persoon implements StringableInterface
 	public $faxNummer;
 	
 	/**
-	 * Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>
+	 * De website van deze persoon
 	 *
 	 * @var string
 	 *
@@ -321,7 +321,7 @@ class Persoon implements StringableInterface
 	 *             "type"="string",
 	 *             "maxLength"=255,
 	 *             "minLength"=10,
-	 *             "example"="+31(0)6-12345678"
+	 *             "example"="www.john.do"
 	 *         }
 	 *     }
 	 * )
@@ -330,7 +330,7 @@ class Persoon implements StringableInterface
 	public $websiteUrl;
 	
 	/**
-	 * Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>
+	 * De aanduiding naasgebruik (voorheen geslacht) van deze persoon
 	 *
 	 * @var string
 	 *
@@ -348,13 +348,13 @@ class Persoon implements StringableInterface
 	 *             "type"="string",
 	 *             "maxLength"=255,
 	 *             "minLength"=10,
-	 *             "example"="+31(0)6-12345678"
+	 *             "example"="v"
 	 *         }
 	 *     }
 	 * )
 	 * @Gedmo\Versioned
 	 **/
-	public $aandudingNaamsgebruik;
+	public $aanduidingNaamsgebruik;
 	
 	/**
 	 * @var Array Verwijzing naar de BRP inschrijving van ouders
@@ -405,7 +405,7 @@ class Persoon implements StringableInterface
 	public $kinderen;	
 	
 	/**
-	 * @ApiProperty()
+	 * @ApiSubresource(maxDepth=1)
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Naam",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
@@ -413,7 +413,7 @@ class Persoon implements StringableInterface
 	private $aanschrijving;
 	
 	/**
-	 * @ApiProperty()
+	 * @ApiSubresource(maxDepth=1)
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Naam",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
@@ -421,15 +421,15 @@ class Persoon implements StringableInterface
 	private $naam;
 	
 	/**
-	 * @ApiProperty()
+	 * @ApiSubresource(maxDepth=1)
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Adres",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $verblijfadres;
 		
-	/**
-	 * @ApiProperty()
+	/*** 
+	 * @ApiSubresource(maxDepth=1)
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\ManyToOne(targetEntity="App\Entity\Persoon\Adres",cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
@@ -437,15 +437,15 @@ class Persoon implements StringableInterface
 	private $postadres;
 	
 	/**
-	 * @ApiProperty()
+	 * @ApiSubresource(maxDepth=1)
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
-	 * @ORM\OneToOne(targetEntity="App\Entity\Persoon\Geboorte",cascade={"persist"})
+	 * @ORM\OneToOne(targetEntity="App\Entity\Persoon\Geboorte", cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)
 	 */
 	private $geboorte;
 	
 	/**
-	 * @ApiProperty()
+	 * @ApiSubresource(maxDepth=1)
 	 * @Groups({"persoon:lezen", "persoon:schrijven"})
 	 * @ORM\OneToOne(targetEntity="App\Entity\Persoon\Overlijden", cascade={"persist"})
 	 * @ORM\JoinColumn( referencedColumnName="id", nullable=true)

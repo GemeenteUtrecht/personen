@@ -8,12 +8,12 @@ parameters:
 
     api_documentation:
         servers:
-        -   url: //brp.zaakonline.nl/
+        -   url: //personen.demo.zaakonline.nl/
             description: Sandbox server
         info:
             description: |
                 # Welkom innovator!
-                Fijn dat je de tijd en moeite hebt genomen om je te verdiepen in dit component. Het  "BRP" component is ontwikkeld voor de gemeente Utrecht en heeft als doel het simuleren van het BRP. Dit component dient alleen gebruikt te worden voor development doeleinden.   
+                Fijn dat je de tijd en moeite hebt genomen om je te verdiepen in dit component. Het  "Personen" component is ontwikkeld voor de gemeente Utrecht en heeft als doel het bijhouden van persoonsgegevens voor natuurlijke personen zonder brp verwijzing. Dit component dient alleen gebruikt te worden voor development doeleinden.   
 
                 # Ondersteuning
                 Word lid van het slackkanaal [https://zaakonline.slack.com](https://zaakonline.slack.com) voor ondersteuning door het ontwikkel team. En krijg regelmatig updates over de ontwikkelingen op het gebied van de zaakonline componenten.
@@ -24,8 +24,8 @@ parameters:
                 - [datamodel als mwb](/schema/datamodel.mwb)
                 - [codebase op github](https://github.com/GemeenteUtrecht/mock-basisregistratie-personen)
                 - [codebase als zip](https://github.com/GemeenteUtrecht/mock-basisregistratie-personen/master.zip)
-                - [docker container](https://hub.docker.com/r/huwelijksplanner/brp-component)
-                - [online demo](http://brp.demo.zaakonline.nl/)
+                - [docker container](https://hub.docker.com/r/huwelijksplanner/personen-component)
+                - [online demo](http://personen.demo.zaakonline.nl/)
 
                 # OpenAPI Specification
                 Deze API is gedocumenteerd in het **OpenAPI format** 
@@ -42,7 +42,7 @@ parameters:
                  - strictly_after -> Data groter dan
                  - strictly_before -> Data kleiner dan                                               
                 
-                Daarnaast kunnen de resultaten ook worden gesorteerd, dit gaat aan de hand van de order parameter, gevolgd door desc (aflopend) of asc (oplopend). Er kunnen meerdere order parameters op volgorde van toepassing worden meegegeven (bijvoorbeeld: https://brp.demo.zaakonline.nl/personen?order[bronOrganisatie]=desc&order[identificatie]=asc)
+                Daarnaast kunnen de resultaten ook worden gesorteerd, dit gaat aan de hand van de order parameter, gevolgd door desc (aflopend) of asc (oplopend). Er kunnen meerdere order parameters op volgorde van toepassing worden meegegeven (bijvoorbeeld: https://personen.demo.zaakonline.nl/personen?order[bronOrganisatie]=desc&order[identificatie]=asc)
                 
                 Kijk voor meer details over de mogelijkheden voor filteren en sorteren bij de GET (verzamel) endpoint van de entiteit die je wilt ophalen.
 
@@ -65,7 +65,7 @@ parameters:
                 Let er bij het meegeven van JWT tokens op dat deze moet worden voorafgegaan door een Bearer en een spatie, onder de header Authorization. De volledig naam wordt daarmee: 'Authorization: Bearer [TOKEN]'.
 
             version: 0.0.21 Alpha
-            title: 'BRP API'
+            title: 'Personen API'
             termsOfService: 'http://www.zaakonline.nl/terms/'
             contact:
                 name: API Support
@@ -96,13 +96,9 @@ parameters:
               description: "Applicatie gebonden aan een JWT token behorende tot een organisatie."
               # Grouping the endopoint  
         x-tagGroups:
-            - name: BRP
+            - name: Personen
               tags:
               - Persoon
-              - Adres
-              - Naam
-              - Overlijden
-              - Geboorte
             - name: Applicatie
               tags:
               - Applicatie

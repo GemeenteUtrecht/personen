@@ -31,6 +31,7 @@ use ActivityLogBundle\Entity\Interfaces\StringableInterface;
  * @package		Commen Ground
  * @subpackage  BRP
  * 
+ * @ApiResource
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */

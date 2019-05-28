@@ -23,13 +23,13 @@ services:
       - MYSQL_USER=${MYSQL_USER} 
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - brp-mysql-data:/var/lib/mysql:rw
+      - personen-mysql-data:/var/lib/mysql:rw
     ports:
       - "3306:3306"
       
   # The PHP container
-  brp-component:
-    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-component:0.0.21
+  personen-component:
+    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-component:0.0.22
     build:
       context: ./ 
       dockerfile: docker/php/Dockerfile
@@ -42,8 +42,8 @@ services:
       - ./:/srv/api:rw,cached
       
   # The NGINX container
-  brp-api:
-    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-nginx:0.0.21
+  personen-api:
+    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-nginx:0.0.22
     build: 
       context: ./ 
       dockerfile: docker/nginx/Dockerfile
@@ -51,7 +51,7 @@ services:
         - ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}_php
         - ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}_api  
     depends_on:
-      - brp-component
+      - personen-component
     volumes:
       - ./public:/srv/api/public:ro
     ports:
@@ -59,4 +59,4 @@ services:
 
 ## We use volumes to achieve db (semi) persistancy for developtment purposes, but do not use this in production! volumes are by nature not persistent       
 volumes:
-  brp-mysql-data: {}
+  personen-mysql-data: {}

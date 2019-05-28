@@ -2,7 +2,7 @@ openapi: 3.0.2
 info:
   description: |
     # Welkom innovator!
-    Fijn dat je de tijd en moeite hebt genomen om je te verdiepen in dit component. Het  "BRP" component is ontwikkeld voor de gemeente Utrecht en heeft als doel het simuleren van het BRP. Dit component dient alleen gebruikt te worden voor development doeleinden.   
+    Fijn dat je de tijd en moeite hebt genomen om je te verdiepen in dit component. Het  "Personen" component is ontwikkeld voor de gemeente Utrecht en heeft als doel het bijhouden van persoonsgegevens voor natuurlijke personen zonder brp verwijzing. Dit component dient alleen gebruikt te worden voor development doeleinden.   
     
     # Ondersteuning
     Word lid van het slackkanaal [https://zaakonline.slack.com](https://zaakonline.slack.com) voor ondersteuning door het ontwikkel team. En krijg regelmatig updates over de ontwikkelingen op het gebied van de zaakonline componenten.
@@ -13,8 +13,8 @@ info:
     - [datamodel als mwb](/schema/datamodel.mwb)
     - [codebase op github](https://github.com/GemeenteUtrecht/mock-basisregistratie-personen)
     - [codebase als zip](https://github.com/GemeenteUtrecht/mock-basisregistratie-personen/master.zip)
-    - [docker container](https://hub.docker.com/r/huwelijksplanner/brp-component)
-    - [online demo](http://brp.demo.zaakonline.nl/)
+    - [docker container](https://hub.docker.com/r/huwelijksplanner/personen-component)
+    - [online demo](http://personen.demo.zaakonline.nl/)
     
     # OpenAPI Specification
     Deze API is gedocumenteerd in het **OpenAPI format** 
@@ -31,7 +31,7 @@ info:
      - strictly_after -> Data groter dan
      - strictly_before -> Data kleiner dan                                               
     
-    Daarnaast kunnen de resultaten ook worden gesorteerd, dit gaat aan de hand van de order parameter, gevolgd door desc (aflopend) of asc (oplopend). Er kunnen meerdere order parameters op volgorde van toepassing worden meegegeven (bijvoorbeeld: https://brp.demo.zaakonline.nl/personen?order[bronOrganisatie]=desc&order[identificatie]=asc)
+    Daarnaast kunnen de resultaten ook worden gesorteerd, dit gaat aan de hand van de order parameter, gevolgd door desc (aflopend) of asc (oplopend). Er kunnen meerdere order parameters op volgorde van toepassing worden meegegeven (bijvoorbeeld: https://personen.demo.zaakonline.nl/personen?order[bronOrganisatie]=desc&order[identificatie]=asc)
     
     Kijk voor meer details over de mogelijkheden voor filteren en sorteren bij de GET (verzamel) endpoint van de entiteit die je wilt ophalen.
     
@@ -54,7 +54,7 @@ info:
     Let er bij het meegeven van JWT tokens op dat deze moet worden voorafgegaan door een Bearer en een spatie, onder de header Authorization. De volledig naam wordt daarmee: 'Authorization: Bearer [TOKEN]'.
     
   version: '0.0.21 Alpha'
-  title: 'BRP API'
+  title: 'Personen API'
   termsOfService: 'http://www.zaakonline.nl/terms/'
   contact:
     name: 'API Support'
@@ -67,6 +67,182 @@ info:
     name: 'EUPL 1.2'
     url: 'https://opensource.org/licenses/EUPL-1.2'
 paths:
+  /adres:
+    get:
+      tags:
+        - Adres
+      operationId: getAdresCollection
+      summary: 'Retrieves the collection of Adres resources.'
+      responses:
+        200:
+          description: 'Adres collection response'
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adres'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adres'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adres'
+      parameters:
+        -
+          name: straatnaam
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: huisnummer
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: postcode
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: woonplaats
+          in: query
+          required: false
+          schema:
+            type: string
+    post:
+      tags:
+        - Adres
+      operationId: postAdresCollection
+      summary: 'Creates a Adres resource.'
+      responses:
+        201:
+          description: 'Adres resource created'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Adres'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adres'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Adres'
+          links:
+            GetAdresItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getAdresItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /adres/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Adres'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adres'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Adres'
+        description: 'The new Adres resource'
+  '/adres/{id}':
+    get:
+      tags:
+        - Adres
+      operationId: getAdresItem
+      summary: 'Retrieves a Adres resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Adres resource response'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Adres'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adres'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Adres'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Adres
+      operationId: deleteAdresItem
+      summary: 'Removes the Adres resource.'
+      responses:
+        204:
+          description: 'Adres resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+    put:
+      tags:
+        - Adres
+      operationId: putAdresItem
+      summary: 'Replaces the Adres resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Adres resource updated'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Adres'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adres'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Adres'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Adres'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adres'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Adres'
+        description: 'The updated Adres resource'
   '/applicatie/{id}':
     get:
       summary: 'Haal op'
@@ -344,6 +520,188 @@ paths:
           required: false
           schema:
             type: string
+  /geboortes:
+    get:
+      tags:
+        - Geboorte
+      operationId: getGeboorteCollection
+      summary: 'Retrieves the collection of Geboorte resources.'
+      responses:
+        200:
+          description: 'Geboorte collection response'
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Geboorte'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Geboorte'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Geboorte'
+      parameters:
+        -
+          name: 'datum[before]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'datum[strictly_before]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'datum[after]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'datum[strictly_after]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[datum]'
+          in: query
+          required: false
+          schema:
+            type: string
+    post:
+      tags:
+        - Geboorte
+      operationId: postGeboorteCollection
+      summary: 'Creates a Geboorte resource.'
+      responses:
+        201:
+          description: 'Geboorte resource created'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+          links:
+            GetGeboorteItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getGeboorteItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /geboortes/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Geboorte'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Geboorte'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Geboorte'
+        description: 'The new Geboorte resource'
+  '/geboortes/{id}':
+    get:
+      tags:
+        - Geboorte
+      operationId: getGeboorteItem
+      summary: 'Retrieves a Geboorte resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Geboorte resource response'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Geboorte
+      operationId: deleteGeboorteItem
+      summary: 'Removes the Geboorte resource.'
+      responses:
+        204:
+          description: 'Geboorte resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+    put:
+      tags:
+        - Geboorte
+      operationId: putGeboorteItem
+      summary: 'Replaces the Geboorte resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Geboorte resource updated'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Geboorte'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Geboorte'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Geboorte'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Geboorte'
+        description: 'The updated Geboorte resource'
   /login_check:
     post:
       summary: 'Token halen'
@@ -386,6 +744,400 @@ paths:
             schema:
               $ref: '#/components/schemas/Applicatie-applicatie:inloggen'
         description: 'The new Applicatie resource'
+  /naams:
+    get:
+      tags:
+        - Naam
+      operationId: getNaamCollection
+      summary: 'Retrieves the collection of Naam resources.'
+      responses:
+        200:
+          description: 'Naam collection response'
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Naam'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Naam'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Naam'
+      parameters:
+        -
+          name: voornamen
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: voorletters
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: voorvoegselGeslachtsnaam
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: geslachtsnaam
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: adelijkeTitel
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[voornamen]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[voorletters]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[voorvoegselGeslachtsnaam]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[geslachtsnaam]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[adelijkeTitel]'
+          in: query
+          required: false
+          schema:
+            type: string
+    post:
+      tags:
+        - Naam
+      operationId: postNaamCollection
+      summary: 'Creates a Naam resource.'
+      responses:
+        201:
+          description: 'Naam resource created'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Naam'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naam'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Naam'
+          links:
+            GetNaamItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getNaamItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /naams/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Naam'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Naam'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Naam'
+        description: 'The new Naam resource'
+  '/naams/{id}':
+    get:
+      tags:
+        - Naam
+      operationId: getNaamItem
+      summary: 'Retrieves a Naam resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Naam resource response'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Naam'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naam'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Naam'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Naam
+      operationId: deleteNaamItem
+      summary: 'Removes the Naam resource.'
+      responses:
+        204:
+          description: 'Naam resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+    put:
+      tags:
+        - Naam
+      operationId: putNaamItem
+      summary: 'Replaces the Naam resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Naam resource updated'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Naam'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naam'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Naam'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Naam'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Naam'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Naam'
+        description: 'The updated Naam resource'
+  /overlijdens:
+    get:
+      tags:
+        - Overlijden
+      operationId: getOverlijdenCollection
+      summary: 'Retrieves the collection of Overlijden resources.'
+      responses:
+        200:
+          description: 'Overlijden collection response'
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Overlijden'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Overlijden'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Overlijden'
+      parameters:
+        -
+          name: 'datum[before]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'datum[strictly_before]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'datum[after]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'datum[strictly_after]'
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'order[datum]'
+          in: query
+          required: false
+          schema:
+            type: string
+    post:
+      tags:
+        - Overlijden
+      operationId: postOverlijdenCollection
+      summary: 'Creates a Overlijden resource.'
+      responses:
+        201:
+          description: 'Overlijden resource created'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+          links:
+            GetOverlijdenItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getOverlijdenItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /overlijdens/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Overlijden'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Overlijden'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Overlijden'
+        description: 'The new Overlijden resource'
+  '/overlijdens/{id}':
+    get:
+      tags:
+        - Overlijden
+      operationId: getOverlijdenItem
+      summary: 'Retrieves a Overlijden resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Overlijden resource response'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Overlijden
+      operationId: deleteOverlijdenItem
+      summary: 'Removes the Overlijden resource.'
+      responses:
+        204:
+          description: 'Overlijden resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+    put:
+      tags:
+        - Overlijden
+      operationId: putOverlijdenItem
+      summary: 'Replaces the Overlijden resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 'Overlijden resource updated'
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Overlijden'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Overlijden'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Overlijden'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Overlijden'
+        description: 'The updated Overlijden resource'
   /personen:
     get:
       summary: 'Logboek inzien'
@@ -786,6 +1538,33 @@ security:
     apiKey: []
 components:
   schemas:
+    Adres:
+      type: object
+      description: Adres
+      properties:
+        id:
+          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          type: integer
+        straatnaam:
+          type: string
+          maxLength: 255
+          example: J.
+          description: 'De voorletters van deze persoon van een persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
+        huisnummer:
+          type: string
+          maxLength: 255
+          example: J.
+          description: 'De voorletters van deze persoon van een persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
+        postcode:
+          type: string
+          maxLength: 255
+          example: J.
+          description: 'De voorletters van deze persoon van een persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
+        woonplaats:
+          type: string
+          maxLength: 255
+          example: J.
+          description: 'De voorletters van deze persoon van een persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
     Applicatie:
       type: object
       description: 'Een Applicatie die is geidentificeerd en geautoriceerd om namens een organisatie wijzigingen uit te voeren'
@@ -933,6 +1712,98 @@ components:
           maxLength: 255
           format: uri
           description: 'De contactpersoon voor deze Applicatie, die bijvoorbeeld wordt verwittigd bij misbruik.'
+    Geboorte:
+      type: object
+      description: Adres
+      properties:
+        id:
+          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          type: integer
+        datum:
+          title: bronOrganisatie
+          type: string
+          example: '123456789'
+          required: 'true'
+          maxLength: 9
+          minLength: 8
+          description: 'Het RSIN van de organisatie waartoe deze Persoon behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef. <br> Het RSIN word bepaald aan de hand van de gauthenticeerde applicatie en kan niet worden overschreven'
+          format: date-time
+        stad:
+          type: email
+          maxLength: 255
+          minLength: 8
+          example: john@do.nl
+          description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
+        land:
+          type: email
+          maxLength: 255
+          minLength: 8
+          example: john@do.nl
+          description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
+    Naam:
+      type: object
+      description: Adres
+      properties:
+        id:
+          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          type: integer
+        voornamen:
+          type: string
+          maxLength: 255
+          minLength: 2
+          example: John
+          description: 'De naam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
+        voorletters:
+          type: string
+          maxLength: 255
+          example: J.
+          description: 'De voorletters van deze persoon van een persoon <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
+        voorvoegselGeslachtsnaam:
+          type: string
+          maxLength: 255
+          minLength: 2
+          example: 'van der'
+          description: 'Voorvoegsel van de achternaam <br /><b>Schema:</b> <a href="https://schema.org/givenName">https://schema.org/givenName</a>'
+        geslachtsnaam:
+          type: string
+          maxLength: 255
+          minLength: 2
+          example: Do
+          description: 'De achternaam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>'
+        adelijkeTitel:
+          type: string
+          maxLength: 255
+          minLength: 2
+          example: Do
+          description: 'De achternaam van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/familyName">https://schema.org/familyName</a>'
+    Overlijden:
+      type: object
+      description: Adres
+      properties:
+        id:
+          description: 'Het identificatie nummer van dit Persoon <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          type: integer
+        datum:
+          title: bronOrganisatie
+          type: string
+          example: '123456789'
+          required: 'true'
+          maxLength: 9
+          minLength: 8
+          description: 'Het RSIN van de organisatie waartoe deze Persoon behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef. <br> Het RSIN word bepaald aan de hand van de gauthenticeerde applicatie en kan niet worden overschreven'
+          format: date-time
+        stad:
+          type: email
+          maxLength: 255
+          minLength: 8
+          example: john@do.nl
+          description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
+        land:
+          type: email
+          maxLength: 255
+          minLength: 8
+          example: john@do.nl
+          description: 'Het email adres van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/email">https://schema.org/email</a>'
     Persoon:
       type: object
       description: Persoon
@@ -954,8 +1825,8 @@ components:
           description: 'Het RSIN van de organisatie waartoe deze Persoon behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef. <br> Het RSIN word bepaald aan de hand van de gauthenticeerde applicatie en kan niet worden overschreven'
         burgerservicenummer:
           type: string
-          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
-          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          example: '123456789'
+          description: 'Een burger service nummer'
           maxLength: 40
         emailadres:
           type: email
@@ -973,20 +1844,20 @@ components:
           type: string
           maxLength: 255
           minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+          example: +31(0)20-1234567
+          description: 'Het fax nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
         websiteUrl:
           type: string
           maxLength: 255
           minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
-        aandudingNaamsgebruik:
+          example: www.john.do
+          description: 'De website van deze persoon'
+        aanduidingNaamsgebruik:
           type: string
           maxLength: 255
           minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+          example: v
+          description: 'De aanduiding naasgebruik (voorheen geslacht) van deze persoon'
         ouders:
           type: string
           example: '[]'
@@ -1070,8 +1941,8 @@ components:
           description: 'Het RSIN van de organisatie waartoe deze Persoon behoord. Dit moet een geldig RSIN zijn van 9 nummers en voldoen aan https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef. <br> Het RSIN word bepaald aan de hand van de gauthenticeerde applicatie en kan niet worden overschreven'
         burgerservicenummer:
           type: string
-          example: 6a36c2c4-213e-4348-a467-dfa3a30f64aa
-          description: 'De unieke identificatie van dit object binnen de organisatie die dit object heeft gecreeerd. <br /><b>Schema:</b> <a href="https://schema.org/identifier">https://schema.org/identifier</a>'
+          example: '123456789'
+          description: 'Een burger service nummer'
           maxLength: 40
         emailadres:
           type: email
@@ -1089,20 +1960,20 @@ components:
           type: string
           maxLength: 255
           minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+          example: +31(0)20-1234567
+          description: 'Het fax nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
         websiteUrl:
           type: string
           maxLength: 255
           minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
-        aandudingNaamsgebruik:
+          example: www.john.do
+          description: 'De website van deze persoon'
+        aanduidingNaamsgebruik:
           type: string
           maxLength: 255
           minLength: 10
-          example: +31(0)6-12345678
-          description: 'Het telefoon nummer van dit persoon <br /><b>Schema:</b> <a href="https://schema.org/telephone">https://schema.org/telephone</a>'
+          example: v
+          description: 'De aanduiding naasgebruik (voorheen geslacht) van deze persoon'
         ouders:
           type: string
           example: '[]'
@@ -1380,7 +2251,7 @@ components:
       name: Authorization
 servers:
   -
-    url: //brp.zaakonline.nl/
+    url: //personen.demo.zaakonline.nl/
     description: 'Sandbox server'
 externalDocs:
   description: 'Vind hier meer informatie over de zaakonline code base.'
@@ -1406,7 +2277,7 @@ tags:
     description: 'Applicatie gebonden aan een JWT token behorende tot een organisatie.'
 x-tagGroups:
   -
-    name: BRP
+    name: Personen
     tags:
       - Persoon
       - Adres
